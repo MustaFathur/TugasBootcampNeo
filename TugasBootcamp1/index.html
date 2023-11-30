@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 1 Bootcamp</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding-top: 56px;
+      }
+
+      @media (max-width: 767px) {
+        body {
+          padding-top: 0;
+        }
+      }
+
+      .card {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">FathurPin</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#"> Beranda </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Promo dan Acara</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Game </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> Top Up</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Content -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <!-- Search Bar -->
+          <div class="input-group mt-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="button-addon2"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+
+          <!-- Top Up Game -->
+          <div class="row mt-3">
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="card">
+                <img src="MobileLegend.png" class="card-img-top" alt="Game 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Mobile Legend</h5>
+                  <p class="card-text">Legenda Seluler</p>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="card">
+                <img src="game-forno.webp" class="card-img-top" alt="Game 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Genshin Impact</h5>
+                  <p class="card-text">Game wibu</p>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="card">
+                <img src="ApiGratis.jpeg" class="card-img-top" alt="Game 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Free Fire</h5>
+                  <p class="card-text">Free Fire</p>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="card">
+                <img src="cod.jpeg" class="card-img-top" alt="Game 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Call of Duty Mobile</h5>
+                  <p class="card-text">Panggilan Tugas</p>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="card">
+                <img src="coc.png" class="card-img-top" alt="Game 1" />
+                <div class="card-body">
+                  <h5 class="card-title">Clash of Clans</h5>
+                  <p class="card-text">Game Perbudakan</p>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="card">
+                <img src="pubg.png" class="card-img-top" alt="Game 1" />
+                <div class="card-body">
+                  <h5 class="card-title">PUBG Mobile</h5>
+                  <p class="card-text">Hunger Game</p>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-12">
+              <div class="card">
+                <img src="ea.png" class="card-img-top" alt="Game 1" />
+                <div class="card-body">
+                  <h5 class="card-title">FIFA EA Esport</h5>
+                  <p class="card-text">PES Better</p>
+                  <a href="#" class="btn btn-primary">Top Up</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <span class="text-muted">©FathurPin 2023 Top Up Game</span>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
