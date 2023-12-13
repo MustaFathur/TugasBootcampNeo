@@ -150,15 +150,15 @@ if (isset($_POST['simpan'])) { //untuk create
                         $q2     = mysqli_query($conn, $sql2);
                         $urut   = 1;
                         while ($r2 = mysqli_fetch_array($q2)) {
-                            $id         = $r2['id'];
-                            $nim        = $r2['nim'];
-                            $nama       = $r2['nama'];
+                            $id             = $r2['id'];
+                            $nama_game      = $r2['nama_game'];
+                            $deskripsi_game = $r2['deskripsi_game'];
 
                         ?>
                             <tr>
                                 <th scope="row"><?php echo $urut++ ?></th>
-                                <td scope="row"><?php echo $nim ?></td>
-                                <td scope="row"><?php echo $nama ?></td>
+                                <td scope="row"><?php echo $nama_game ?></td>
+                                <td scope="row"><?php echo $deskripsi_game ?></td>
 
                                 <td scope="row">
                                     <a href="index.php?op=edit&id=<?php echo $id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
