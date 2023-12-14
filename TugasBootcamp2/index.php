@@ -1,46 +1,46 @@
-<<?php  
+<?php
 session_start();
 include('conn.php');
-$nama_game          = "";
-$deskripsi_game     = "";
-$sukses             = "";
-$error              = "";
+
+$nama      = "";
+$deskripsi = "";
+$sukses    = "";
+$error     = "";
 
 if (isset($_GET['op'])) {
     $op = $_GET['op'];
 } else {
     $op = "";
 }
-if($op == 'delete'){
+if ($op == 'delete') {
     $id         = $_GET['id'];
     $sql1       = "delete from game where id = '$id'";
-    $q1         = mysqli_query($conn,$sql1);
-    if($q1){
+    $q1         = mysqli_query($conn, $sql1);
+    if ($q1) {
         $sukses = "Berhasil hapus data";
-    }else{
+    } else {
         $error  = "Gagal melakukan delete data";
     }
 }
 if ($op == 'edit') {
-    $id               = $_GET['id'];
-    $sql1             = "select * from game where id = '$id'";
-    $q1               = mysqli_query($conn, $sql1);
-    $r1               = mysqli_fetch_array($q1);
-    $nama_game        = $r1['nama_game'];
-    $deskripsi_game   = $r1['deskripsi_game'];
+    $id              = $_GET['id'];
+    $sql1            = "select * from game where id = '$id'";
+    $q1              = mysqli_query($conn, $sql1);
+    $r1              = mysqli_fetch_array($q1);
+    $nama            = $r1['nama'];
+    $deskripsi       = $r1['deskripsi'];
 
-    if ($nama_game == '') {
+    if ($nama == '') {
         $error = "Data tidak ditemukan";
     }
 }
 if (isset($_POST['simpan'])) { //untuk create
-    $nama_game        = $_POST['nama'];
-    $deskripsi_game   = $_POST['deskripsi'];
+    $nama        = $_POST['nama'];
+    $deskripsi   = $_POST['deskripsi'];
 
-
-    if ($nama_game && $deskripsi_game) {
+    if ($nama && $deskripsi) {
         if ($op == 'edit') { //untuk update
-            $sql1       = "update game set nama_game = '$nama_game', deskripsi_game = '$deskripsi_game' where id = '$id'";
+            $sql1       = "update game set nama = '$nama',deskripsi='$deskripsi' where id = '$id'";
             $q1         = mysqli_query($conn, $sql1);
             if ($q1) {
                 $sukses = "Data berhasil diupdate";
@@ -48,8 +48,8 @@ if (isset($_POST['simpan'])) { //untuk create
                 $error  = "Data gagal diupdate";
             }
         } else { //untuk insert
-            $sql1   = "insert into game(nama_game,deskripsi_game) values ('$nama_game','$deskripsi_game')";
-            $q1     = mysqli_query($conn, $sql1);
+            $sql1   = "insert into game(nama,deskripsi) values ('$nama','$deskripsi')";
+            $q1     =  mysqli_query($conn, $sql1);
             if ($q1) {
                 $sukses     = "Berhasil memasukkan data baru";
             } else {
@@ -96,7 +96,7 @@ if (isset($_POST['simpan'])) { //untuk create
                         <?php echo $error ?>
                     </div>
                 <?php
-                    header("refresh:5;url=index.php");//5 : detik
+                    header("refresh:5;url=index.php"); //5 : detik
                 }
                 ?>
                 <?php
@@ -113,13 +113,13 @@ if (isset($_POST['simpan'])) { //untuk create
                     <div class="mb-3 row">
                         <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama_game ?>">
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?php echo $nama ?>">
                         </div>
                     </div>
                     <div class="mb-3 row">
                         <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?php echo $deskripsi_game ?>">
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?php echo $deskripsi ?>">
                         </div>
                     </div>
                     <div class="col-12">
@@ -150,26 +150,25 @@ if (isset($_POST['simpan'])) { //untuk create
                         $q2     = mysqli_query($conn, $sql2);
                         $urut   = 1;
                         while ($r2 = mysqli_fetch_array($q2)) {
-                            $id             = $r2['id'];
-                            $nama_game      = $r2['nama_game'];
-                            $deskripsi_game = $r2['deskripsi_game'];
+                            $id         = $r2['id'];
+                            $nama       = $r2['nama'];
+                            $deskripsi  = $r2['deskripsi'];
 
                         ?>
                             <tr>
                                 <th scope="row"><?php echo $urut++ ?></th>
-                                <td scope="row"><?php echo $nama_game ?></td>
-                                <td scope="row"><?php echo $deskripsi_game ?></td>
-
+                                <td scope="row"><?php echo $nama ?></td>
+                                <td scope="row"><?php echo $deskripsi ?></td>
                                 <td scope="row">
                                     <a href="index.php?op=edit&id=<?php echo $id ?>"><button type="button" class="btn btn-warning">Edit</button></a>
-                                    <a href="index.php?op=delete&id=<?php echo $id?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>            
+                                    <a href="index.php?op=delete&id=<?php echo $id ?>" onclick="return confirm('Yakin mau delete data?')"><button type="button" class="btn btn-danger">Delete</button></a>
                                 </td>
                             </tr>
                         <?php
                         }
                         ?>
                     </tbody>
-                    
+
                 </table>
             </div>
         </div>
